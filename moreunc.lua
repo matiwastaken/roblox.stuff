@@ -396,9 +396,26 @@ import pyperclip
 
 import psutil
 
+pip install flask itsdangerous pyperclip psutil
+
+
+ascii_art = r"""
+               __        ___________                      ________     _______      _______   
+_____   __ ___/  |_  ____\_   _____/__  ___ ____   ____   \_____  \    \   _  \     \   _  \  
+\__  \ |  |  \   __\/  _ \|    __)_\  \/  // __ \_/ ___\    _(__  <    /  /_\  \    /  /_\  \ 
+ / __ \|  |  /|  | (  <_> )        \>    <\  ___/\  \___   /       \   \  \_/   \   \  \_/   \
+(____  /____/ |__|  \____/_______  /__/\_ \\___  >\___  > /______  / /\ \_____  / /\ \_____  /
+     \/                          \/      \/    \/     \/         \/  \/       \/  \/       \/  
+"""
+
+print("moreUNC v3 | AutoExec 3.0.0")
+print(ascii_art)
+
+
+
 UserHome = os.path.expanduser("~")
 DownloadPath = os.path.join(UserHome, "Downloads")
-ExecutorName = "MoreUNC"
+ExecutorName = "AutoExec"
 
 def GenerateId(length=6):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
@@ -535,7 +552,7 @@ if __name__ == "__main__":
     run_batch(format([[@echo off
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo Python is not installed! Please install Python first.
+    echo autoExec: no python found!
     pause
 )
 
